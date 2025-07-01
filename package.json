@@ -1,0 +1,21 @@
+{
+  "name": "matrip",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx @tailwindcss/cli -i ./src/style/input.css -o ./src/style/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.10",
+    "preline": "^3.1.0",
+    "tailwindcss": "^4.1.10"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.10"
+  }
+}

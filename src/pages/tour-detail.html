@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/input.css" />
+    <link rel="stylesheet" href="../style/output.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <title>Tour Detail</title>
+  </head>
+  <body class="dark:bg-neutral-900">
+    <header id="start" class="bg-white dark:bg-black">
+      <section
+        class="fixed top-0 left-0 w-full bg-white/70 dark:bg-black/80 dark:border-neutral-500 backdrop-blur-2xl border-b-1 border-neutral-300 z-99">
+        <div
+          id="scrollBar"
+          class="absolute top-0 left-0 bg-primary h-2 w-[0%] z-999"
+        ></div>
+        <nav
+          class="container z-10 flex justify-between items-center h-20 max-w-screen-xl mx-auto px-4 lg:px-0">
+          <div class="flex-shrink-0">
+            <a href="/index.html">
+              <img
+                class="transition duration-500 cursor-pointer hover:scale-110 hover:duration-500"
+                width="100"
+                src="/assets/img/logo.png"
+                alt="logo"
+              />
+            </a>
+          </div>
+          <button
+            id="menu-toggle"
+            class="md:hidden text-primary dark:text-secondary focus:outline-none p-2"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+          <div
+            id="nav-desktop-center-group"
+            class="hidden md:flex flex-grow justify-start md:justify-center"
+          >
+            <div
+              id="nav-links-desktop"
+              class="flex items-center gap-20 md:gap-10 lg:gap-20 text-xl font-bold transition duration-500 text-primary dark:text-secondary"
+            >
+              <a href="./tour.html">
+                <h2
+                  class="transition duration-500 hover:scale-110 hover:underline hover:underline-offset-2 hover:duration-500"
+                >
+                  Tour
+                </h2>
+              </a>
+              <a href="./destination.html">
+                <h2
+                  class="transition duration-500 hover:scale-110 hover:underline hover:underline-offset-2 hover:duration-500"
+                >
+                  Destination
+                </h2>
+              </a>
+              <a href="./event.html">
+                <h2
+                  class="transition duration-500 hover:scale-110 hover:underline hover:underline-offset-2 hover:duration-500"
+                >
+                  Event
+                </h2>
+              </a>
+              <a href="./about.html">
+                <h2
+                  class="transition duration-500 hover:scale-110 hover:underline hover:underline-offset-2 hover:duration-500"
+                >
+                  About Us
+                </h2>
+              </a>
+            </div>
+          </div>
+          <div
+            id="nav-desktop-right-buttons"
+            class="hidden md:flex items-center gap-4 lg:gap-10 flex-shrink-0"
+          >
+            <button
+              type="button"
+              class="hs-dark-mode-active:hidden block hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              data-hs-theme-click-value="dark"
+            >
+              <span
+                class="group inline-flex shrink-0 justify-center items-center size-9"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+              </span>
+            </button>
+            <button
+              type="button"
+              class="hs-dark-mode-active:block hidden hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              data-hs-theme-click-value="light"
+            >
+              <span
+                class="group inline-flex shrink-0 justify-center items-center size-9"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M12 2v2"></path>
+                  <path d="M12 20v2"></path>
+                  <path d="m4.93 4.93 1.41 1.41"></path>
+                  <path d="m17.66 17.66 1.41 1.41"></path>
+                  <path d="M2 12h2"></path>
+                  <path d="M20 12h2"></path>
+                  <path d="m6.34 17.66-1.41 1.41"></path>
+                  <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+              </span>
+            </button>
+            <div id="user-action-button">
+                    <a href="./user-login.html">
+                        <button class="bg-primary p-[0.8rem_1.2rem] rounded-lg text-white font-bold hover:bg-[#0653ad] transition duration-500 hover:duration-500 cursor-pointer w-fit">
+                      Log In
+                    </button>
+                    </a>    
+                </div>
+          </div>
+        </nav>
+      </section>
+      <div
+        id="nav-links-mobile"
+        class="hidden fixed top-20 left-0 w-full bg-white dark:bg-black overflow-y-auto"
+        style="height: calc(100vh - 80px); z-index: 95"
+      >
+        <div class="flex flex-col items-start py-4 w-full">
+          <a href="./tour.html">
+            <h2
+              class="text-xl font-bold text-primary dark:text-secondary py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-800 w-full text-center"
+            >
+              Tour
+            </h2>
+          </a>
+          <a href="./destination.html">
+            <h2
+              class="text-xl font-bold text-primary dark:text-secondary py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-800 w-full text-center"
+            >
+              Destination
+            </h2>
+          </a>
+          <a href="./event.html">
+            <h2
+              class="text-xl font-bold text-primary dark:text-secondary py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-800 w-full text-center"
+            >
+              Event
+            </h2>
+          </a>
+          <a href="./about.html">
+            <h2
+              class="text-xl font-bold text-primary dark:text-secondary py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-800 w-full text-center"
+            >
+              About Us
+            </h2>
+          </a>
+          <div
+            class="flex flex-col items-start ml-4 gap-4 py-4 mt-4 border-t border-gray-200 dark:border-neutral-700 w-full"
+          >
+            <button
+              type="button"
+              class="hs-dark-mode-active:hidden block hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              data-hs-theme-click-value="dark"
+            >
+              <span
+                class="group inline-flex shrink-0 justify-center items-center size-9"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+              </span>
+            </button>
+            <button
+              type="button"
+              class="hs-dark-mode-active:block hidden hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              data-hs-theme-click-value="light"
+            >
+              <span
+                class="group inline-flex shrink-0 justify-center items-center size-9"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M12 2v2"></path>
+                  <path d="M12 20v2"></path>
+                  <path d="m4.93 4.93 1.41 1.41"></path>
+                  <path d="m17.66 17.66 1.41 1.41"></path>
+                  <path d="M2 12h2"></path>
+                  <path d="M20 12h2"></path>
+                  <path d="m6.34 17.66-1.41 1.41"></path>
+                  <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+              </span>
+            </button>
+            <div id="user-action-button">
+                    <a href="./user-login.html">
+                        <button class="bg-primary p-[0.8rem_1.2rem] rounded-lg text-white font-bold hover:bg-[#0653ad] transition duration-500 hover:duration-500 cursor-pointer w-fit">
+                      Log In
+                    </button>
+                    </a>    
+                </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="mt-20">
+      <section
+        class=" min-h-[60vh] md:min-h-[70vh] lg:h-[90vh] py-8 md:py-12 lg:py-0"
+      >
+        <div class="max-w-screen-xl container mx-auto px-2 sm:px-4 md:px-6">
+          <h1
+            id="tour-title"
+            class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary my-8 md:my-16 lg:my-20 text-center lg:text-left dark:text-secondary"
+          ></h1>
+          <div
+            class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 lg:gap-0 text-center md:text-center lg:text-left my-6 md:my-10 justify-items-center md:justify-items-center lg:justify-items-start"
+          >
+            <div class="flex items-center gap-2 md:gap-3">
+              <i class="fa-solid fa-location-dot text-ascent"></i>
+              <p class="text-sm md:text-base dark:text-gray-200">Kampung spue - Cambodia</p>
+            </div>
+            <div class="flex items-center gap-4 md:gap-10">
+              <div class="flex items-center gap-2 md:gap-3">
+                <i class="fa-solid fa-eye text-ascent"></i>
+                <p class="text-sm md:text-base dark:text-gray-200">213</p>
+              </div>
+              <div class="flex items-center gap-1 md:gap-2">
+                <i class="fa-solid fa-star text-yellow-300"></i>
+                <i class="fa-solid fa-star text-yellow-300"></i>
+                <i class="fa-solid fa-star text-yellow-300"></i>
+                <i class="fa-solid fa-star text-yellow-300"></i>
+                <i class="fa-solid fa-star text-yellow-300"></i>
+              </div>
+              <i class="fa-regular fa-heart text-red-500"></i>
+            </div>
+          </div>
+
+          <div
+            id="tour-images"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-10 justify-items-center"
+          >
+            <img
+              class="w-full h-48 sm:h-64 md:h-72 lg:h-80 object-cover rounded-xl"
+              src="../../assets/img/sr1.jpg"
+              alt=""
+            />
+            <img
+              class="w-full h-48 sm:h-64 md:h-72 lg:h-80 object-cover rounded-xl"
+              src="../../assets/img/sr3.jpg"
+              alt=""
+            />
+            <img
+              class="w-full h-48 sm:h-64 md:h-72 lg:h-80 object-cover rounded-xl"
+              src="../../assets/img/sr2.jpg"
+              alt=""
+            />
+          </div>
+
+          <div
+            class="flex flex-wrap gap-4 md:gap-10 mt-8 md:mt-16 justify-center md:justify-center lg:justify-start"
+          >
+            <div class="w-1/2 sm:w-auto">
+              <div class="flex gap-2 md:gap-3 items-center mt-5">
+                <i
+                  class="fa-solid fa-calendar text-primary text-xl md:text-2xl lg:text-3xl dark:text-secondary"
+                ></i>
+                <h3 class="text-sm md:text-base lg:text-lg dark:text-gray-200">Duration</h3>
+              </div>
+              <p class="ml-4 md:ml-10 mt-2 md:mt-3 text-xs md:text-base dark:text-gray-200">
+                3 Days
+              </p>
+            </div>
+            <div class="w-1/2 sm:w-auto">
+              <div class="flex gap-2 md:gap-3 items-center mt-5">
+                <i
+                  class="fa-solid fa-users-viewfinder text-primary text-xl md:text-2xl lg:text-3xl dark:text-secondary"
+                ></i>
+                <h3 class="text-sm md:text-base lg:text-lg dark:text-gray-200">Max people</h3>
+              </div>
+              <p class="ml-4 md:ml-13 mt-2 md:mt-3 text-xs md:text-base dark:text-gray-200">20</p>
+            </div>
+            <div class="w-1/2 sm:w-auto">
+              <div class="flex gap-2 md:gap-3 items-center mt-5">
+                <i
+                  class="fa-solid fa-users-rays text-primary text-xl md:text-2xl lg:text-3xl dark:text-secondary"
+                ></i>
+                <h3 class="text-sm md:text-base lg:text-lg dark:text-gray-200">Min age</h3>
+              </div>
+              <p class="ml-4 md:ml-13 mt-2 md:mt-3 text-xs md:text-base dark:text-gray-200">12+</p>
+            </div>
+            <div class="w-1/2 sm:w-auto">
+              <div class="flex gap-2 md:gap-3 items-center mt-5">
+                <i
+                  class="fa-solid fa-bus text-primary text-xl md:text-2xl lg:text-3xl dark:text-secondary"
+                ></i>
+                <h3 class="text-sm md:text-base lg:text-lg dark:text-gray-200">Pick up</h3>
+              </div>
+              <p class="ml-4 md:ml-12 mt-2 md:mt-3 text-xs md:text-base dark:text-gray-200">
+                Bus Station
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="max-w-screen-xl container mx-auto px-2 sm:px-4 md:px-6">
+        <div
+          class="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-5 my-8 md:my-20 mb-6 md:mb-10 mt-8 md:mt-20"
+        >
+          <div
+            class="p-2 md:p-[1rem_0.5rem] border-b-4 md:border-b-5 border-secondary pb-2 md:pb-5 text-secondary hover:bg-secondary hover:text-white hover:border-none hover:pb-0 transition duration-500 cursor-pointer text-center font-medium text-xs md:text-base"
+          >
+            Description
+          </div>
+          <div
+            class="p-2 md:p-[1rem_0.5rem] border-b-4 md:border-b-5 border-secondary pb-2 md:pb-5 text-secondary hover:bg-secondary hover:text-white hover:border-none hover:pb-0 transition duration-500 cursor-pointer text-center font-medium text-xs md:text-base"
+          >
+            In / Exclude
+          </div>
+          <div
+            class="p-2 md:p-[1rem_0.5rem] border-b-4 md:border-b-5 border-secondary pb-2 md:pb-5 text-secondary hover:bg-secondary hover:text-white hover:border-none hover:pb-0 transition duration-500 cursor-pointer text-center font-medium text-xs md:text-base"
+          >
+            Tour Plan
+          </div>
+          <div
+            class="p-2 md:p-[1rem_0.5rem] border-b-4 md:border-b-5 border-secondary pb-2 md:pb-5 text-secondary hover:bg-secondary hover:text-white hover:border-none hover:pb-0 transition duration-500 cursor-pointer text-center font-medium text-xs md:text-base"
+          >
+            Tour Map
+          </div>
+          <div
+            class="p-2 md:p-[1rem_0.5rem] border-b-4 md:border-b-5 border-secondary pb-2 md:pb-5 text-secondary hover:bg-secondary hover:text-white hover:border-none hover:pb-0 transition duration-500 cursor-pointer text-center font-medium text-xs md:text-base"
+          >
+            Review
+          </div>
+        </div>
+
+        <!-- Overview -->
+        <div class="mb-6 md:mb-10">
+          <article class="w-full md:w-200">
+            <h2
+              class="text-2xl md:text-3xl font-bold mb-3 md:mb-5 text-primary dark:text-secondary"
+            >
+              Overview
+            </h2>
+            <p
+              id="tour-description"
+              class="mb-3 md:mb-5 leading-6 md:leading-7 text-justify text-sm md:text-base"
+            ></p>
+
+            <p
+              class="mb-3 md:mb-5 leading-6 md:leading-7 text-justify text-sm md:text-base dark:text-gray-200"
+            >
+              This 5-day, 4-night tour includes guided trekking through scenic
+              trails, mountain biking, waterfall swimming, and evening campfires
+              under the stars. With all camping equipment, meals, and
+              experienced guides provided, you'll experience the best of
+              Cambodia's natural wilderness while enjoying modern facilities and
+              comfortable accommodations in this pristine mountain paradise.
+            </p>
+          </article>
+        </div>
+
+        <!-- Include / Exclude -->
+        <div class="mb-6 md:mb-10">
+          <h2 class="text-2xl md:text-3xl font-bold mb-3 md:mb-5 text-primary dark:text-secondary">
+            What's Included / Excluded
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 md:gap-10">
+            <div>
+              <h3
+                class="text-lg md:text-xl font-semibold text-primary mb-2 md:mb-3 dark:text-secondary"
+              >
+                Included
+              </h3>
+              <ul
+                class="list-disc ml-4 md:ml-6 leading-7 md:leading-8 text-justify text-sm md:text-base dark:text-gray-200"
+              >
+                <li>All meals during the tour (breakfast, lunch, dinner)</li>
+                <li>Professional English-speaking tour guide</li>
+                <li>Camping equipment (tent, sleeping bag, etc.)</li>
+                <li>Entrance fee to Kirirom National Park</li>
+                <li>Transportation from Phnom Penh and return</li>
+              </ul>
+            </div>
+            <div>
+              <h3
+                class="text-lg md:text-xl font-semibold text-primary mb-2 md:mb-3 dark:text-secondary"
+              >
+                Excluded
+              </h3>
+              <ul
+                class="list-disc ml-4 md:ml-6 leading-7 md:leading-8 text-justify text-sm md:text-base dark:text-gray-200"
+              >
+                <li>Travel insurance</li>
+                <li>Personal expenses (souvenirs, snacks)</li>
+                <li>Tips for guide and driver</li>
+                <li>Alcoholic beverages</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tour Plan -->
+        <div class="mb-6 md:mb-10">
+          <h2 class="text-2xl md:text-3xl font-bold mb-3 md:mb-5 text-primary dark:text-secondary">
+            Tour Plan
+          </h2>
+          <ul
+            class="list-decimal ml-4 md:ml-6 leading-8 md:leading-9 text-justify text-sm md:text-base dark:text-gray-200"
+          >
+            <li>
+              <strong>Day 1:</strong> Pick up from Phnom Penh → drive to Kirirom
+              → camp setup → forest walk
+            </li>
+            <li>
+              <strong>Day 2:</strong> Guided hike to waterfalls → lunch at
+              riverbank → evening campfire
+            </li>
+            <li>
+              <strong>Day 3:</strong> Mountain biking trails → picnic lunch →
+              optional wildlife spotting
+            </li>
+            <li>
+              <strong>Day 4:</strong> Cultural visit to local village → team
+              building games at campsite
+            </li>
+            <li>
+              <strong>Day 5:</strong> Morning yoga → pack and return to Phnom
+              Penh
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tour Map -->
+        <div class="mb-10 md:mb-20">
+          <h2 class="text-2xl md:text-3xl font-bold mb-3 md:mb-5 text-primary dark:text-secondary">
+            Map
+          </h2>
+          <div class="w-full h-64 md:h-96 rounded-xl overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9296.956198570719!2d104.90438131246918!3d11.559845256552347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310928256ebe44a9%3A0x468315122092d785!2sKampong%20Speu%20Province!5e0!3m2!1sen!2skh!4v1750953737132!5m2!1sen!2skh"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      <!-- Responsive Booking Card: mobile/tablet below content, desktop absolute right -->
+      <div
+        class="w-full px-2 sm:px-4 mt-6 md:mt-10 lg:mt-0 lg:w-auto lg:absolute lg:right-30 lg:top-300 flex justify-center lg:block z-40"
+      >
+        <form
+          id="bookingForm"
+          class="w-100 max-w-full sm:max-w-md grid grid-cols-1 gap-4 sm:gap-5 bg-white shadow-lg p-3 sm:p-4 md:p-6 rounded-2xl mx-auto mt-0"
+        >
+          <div class="flex flex-col gap-3 sm:gap-4">
+            <div class="mb-2">
+              <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-primary dark:text-secondary">
+                $42.00
+              </h2>
+              <h3
+                class="text-xs sm:text-sm md:text-base text-gray-400 line-through"
+              >
+                $49.00
+              </h3>
+            </div>
+            <label for="checkIn" class="text-xs sm:text-sm font-semibold"
+              >Check-In</label
+            >
+            <input
+              type="text"
+              id="checkIn"
+              name="checkIn"
+              placeholder="Select date"
+              class="border border-gray-300 rounded-lg p-2 focus:outline-primary flatpickr text-xs sm:text-sm"
+              required
+            />
+            <label for="checkOut" class="text-xs sm:text-sm font-semibold"
+              >Check-Out</label
+            >
+            <input
+              type="text"
+              id="checkOut"
+              name="checkOut"
+              placeholder="Select date"
+              class="border border-gray-300 rounded-lg p-2 focus:outline-primary flatpickr text-xs sm:text-sm"
+              required
+            />
+            <label for="guest" class="text-xs sm:text-sm font-semibold"
+              >Guests</label
+            >
+            <input
+              type="number"
+              id="guest"
+              name="guest"
+              min="1"
+              value="1"
+              class="border border-gray-300 rounded-lg p-2 focus:outline-primary text-xs sm:text-sm dark:focus:outline-secondary"
+              required
+            />
+            <div class="pt-2">
+              <button
+                type="submit"
+                class="bg-primary dark:bg-secondary text-white font-bold py-2 px-5 rounded-lg hover:bg-secondary dark:hover:bg-primary transition w-full text-xs sm:text-sm"
+              >
+                Check Availability
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- <div class="max-w-screen-xl container mx-auto px-2 sm:px-4 md:px-6">
+        <h2
+          class="text-2xl md:text-3xl text-primary font-bold my-8 md:my-20 text-center md:text-left"
+        >
+          You May Like
+        </h2>
+        <div
+          id="top-tour"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-10"
+        ></div>
+        <div id="tagContainer">
+
+        </div>
+      </div> -->
+    </main>
+
+    <footer class="bg-primary text-white mt-10 md:mt-20 dark:bg-black">
+      <section class="border-gray-400 border-b">
+        <div
+          class="container max-w-screen-xl mx-auto py-8 md:py-10 px-2 sm:px-6 lg:px-8"
+        >
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 sm:gap-x-8 lg:gap-x-12 items-start"
+          >
+            <div class="flex justify-center sm:justify-start items-center">
+              <a href="index.html">
+                <img
+                  width="140"
+                  md:width="180"
+                  src="/assets/img/logo.png"
+                  alt="MaTrip Logo"
+                />
+              </a>
+            </div>
+
+            <div class="text-center sm:text-left mt-6 sm:mt-0">
+              <h2
+                class="mb-2 md:mb-4 text-lg md:text-xl font-bold text-secondary"
+              >
+                Support
+              </h2>
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="./index.html#start"
+                >Customer Support</a
+              >
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="./index.html#start"
+                >Privacy & Policy</a
+              >
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="./index.html#start"
+                >Contact Channels</a
+              >
+            </div>
+
+            <div class="text-center sm:text-left mt-6 sm:mt-0">
+              <h2
+                class="mb-2 md:mb-4 text-lg md:text-xl font-bold text-secondary"
+              >
+                About Us
+              </h2>
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="./index.html#start"
+                >Our Story</a
+              >
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="./index.html#start"
+                >Travel Blog & Tips</a
+              >
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="./index.html#start"
+                >Working with Us</a
+              >
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="./index.html#start"
+                >Be Our Partner</a
+              >
+            </div>
+
+            <div class="text-center sm:text-left mt-6 sm:mt-0">
+              <h2
+                class="mb-2 md:mb-4 text-lg md:text-xl font-bold text-secondary"
+              >
+                Contact Info
+              </h2>
+              <p class="mb-2 md:mb-4 font-light text-xs md:text-base">
+                135 Kampuchea Krom, Teuk Thla, Toul Kork, Phnom Penh, Cambodia
+              </p>
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="mailto:MaTrip12@gmail.com"
+              >
+                <i class="mr-2 md:mr-3 fa-solid fa-envelope text-secondary"></i
+                >MaTrip12@gmail.com
+              </a>
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="tel:+85512345678"
+              >
+                <i
+                  class="mr-2 md:mr-3 fa-solid fa-phone-volume text-secondary"
+                ></i
+                >+855 12345678
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="container flex flex-col md:flex-row items-center justify-between max-w-screen-xl mx-auto py-4 md:py-5 px-2 sm:px-6 lg:px-8 text-center md:text-left"
+      >
+        <p class="text-xs md:text-sm font-light mb-2 md:mb-0">
+          © Copyright 2025 by Matrip.com
+        </p>
+        <div class="flex flex-wrap justify-center gap-2 md:gap-3">
+          <img
+            class="h-5 sm:h-6 md:h-8"
+            src="/assets/img/visa.png"
+            alt="Visa"
+          />
+          <img class="h-5 sm:h-6 md:h-8" src="/assets/img/aba.png" alt="ABA" />
+          <img
+            class="h-5 sm:h-6 md:h-8"
+            src="/assets/img/acleda.png"
+            alt="ACLEDA"
+          />
+          <img
+            class="h-5 sm:h-6 md:h-8"
+            src="/assets/img/paypal.png"
+            alt="PayPal"
+          />
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://unpkg.com/preline@latest/dist/preline.js"></script>
+    <script>
+      flatpickr("#checkIn", {
+        dateFormat: "Y-m-d",
+        minDate: "today",
+      });
+
+      flatpickr("#checkOut", {
+        dateFormat: "Y-m-d",
+        minDate: new Date().fp_incr(1),
+      });
+    </script>
+  </body>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false,
+      easing: "ease-in-out",
+    });
+  </script>
+  <script src="../script/scroll-progress.js"></script>
+  <script type="module" src="../script/tour-detail.js"></script>
+  <script src="../script/tour-data.js"></script>
+  <script type="module" src="../script/top-tour.js"></script>
+  <script src="../script/explore-tour.js"></script>
+  <script src="../script/toggle.js"></script>
+  <script src="../script/auth-check.js"></script>
+  <script src="../script/recommend-place.js"></script>
+</html>

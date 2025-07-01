@@ -1,0 +1,45 @@
+# Node.js dependencies
+node_modules/
+
+# Build output
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# dotenv environment variables file
+.env
+.env.*
+
+# VS Code settings
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python virtual environments (if any)
+venv/
+ENV/
+env/
+.venv/
+.env/
+
+# Python bytecode (if any)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Static and media files (optional)
+static/
+Matrip.mp4

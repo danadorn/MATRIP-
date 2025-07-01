@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hotel Detail</title>
+  <link rel="stylesheet" href="../style/input.css" />
+  <link rel="stylesheet" href="../style/output.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body class="bg-white dark:bg-black text-black dark:text-white">
+
+  <header id="start" class="bg-white dark:bg-black">
+      <section
+        class="fixed top-0 left-0 w-full bg-white/70 dark:bg-black/80 dark:border-neutral-500 backdrop-blur-2xl border-b-1 border-neutral-300 z-99">
+        <div
+          id="scrollBar"
+          class="absolute top-0 left-0 bg-primary h-2 w-[0%] z-999"
+        ></div>
+        <nav
+          class="container z-10 flex justify-between items-center h-20 max-w-screen-xl mx-auto px-4 lg:px-0">
+          <div class="flex-shrink-0">
+            <a href="/index.html">
+              <img
+                class="transition duration-500 cursor-pointer hover:scale-110 hover:duration-500"
+                width="100"
+                src="/assets/img/logo.png"
+                alt="logo"
+              />
+            </a>
+          </div>
+          <button
+            id="menu-toggle"
+            class="md:hidden text-primary dark:text-secondary focus:outline-none p-2"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+          <div
+            id="nav-desktop-center-group"
+            class="hidden md:flex flex-grow justify-start md:justify-center"
+          >
+            <div
+              id="nav-links-desktop"
+              class="flex items-center gap-20 md:gap-10 lg:gap-20 text-xl font-bold transition duration-500 text-primary dark:text-secondary"
+            >
+              <a href="./tour.html">
+                <h2
+                  class="transition duration-500 hover:scale-110 hover:underline hover:underline-offset-2 hover:duration-500"
+                >
+                  Tour
+                </h2>
+              </a>
+              <a href="./destination.html">
+                <h2
+                  class="transition duration-500 hover:scale-110 hover:underline hover:underline-offset-2 hover:duration-500"
+                >
+                  Destination
+                </h2>
+              </a>
+              <a href="./event.html">
+                <h2
+                  class="transition duration-500 hover:scale-110 hover:underline hover:underline-offset-2 hover:duration-500"
+                >
+                  Event
+                </h2>
+              </a>
+              <a href="./about.html">
+                <h2
+                  class="transition duration-500 hover:scale-110 hover:underline hover:underline-offset-2 hover:duration-500"
+                >
+                  About Us
+                </h2>
+              </a>
+            </div>
+          </div>
+          <div
+            id="nav-desktop-right-buttons"
+            class="hidden md:flex items-center gap-4 lg:gap-10 flex-shrink-0"
+          >
+            <button
+              type="button"
+              class="hs-dark-mode-active:hidden block hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              data-hs-theme-click-value="dark"
+            >
+              <span
+                class="group inline-flex shrink-0 justify-center items-center size-9"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+              </span>
+            </button>
+            <button
+              type="button"
+              class="hs-dark-mode-active:block hidden hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              data-hs-theme-click-value="light"
+            >
+              <span
+                class="group inline-flex shrink-0 justify-center items-center size-9"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M12 2v2"></path>
+                  <path d="M12 20v2"></path>
+                  <path d="m4.93 4.93 1.41 1.41"></path>
+                  <path d="m17.66 17.66 1.41 1.41"></path>
+                  <path d="M2 12h2"></path>
+                  <path d="M20 12h2"></path>
+                  <path d="m6.34 17.66-1.41 1.41"></path>
+                  <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+              </span>
+            </button>
+            <div id="user-action-button">
+                    <a href="./user-login.html">
+                        <button class="bg-primary p-[0.8rem_1.2rem] rounded-lg text-white font-bold hover:bg-[#0653ad] transition duration-500 hover:duration-500 cursor-pointer w-fit">
+                      Log In
+                    </button>
+                    </a>    
+                </div>
+          </div>
+        </nav>
+      </section>
+      <div
+        id="nav-links-mobile"
+        class="hidden fixed top-20 left-0 w-full bg-white dark:bg-black overflow-y-auto"
+        style="height: calc(100vh - 80px); z-index: 95"
+      >
+        <div class="flex flex-col items-start py-4 w-full">
+          <a href="./tour.html">
+            <h2
+              class="text-xl font-bold text-primary dark:text-secondary py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-800 w-full text-center"
+            >
+              Tour
+            </h2>
+          </a>
+          <a href="./destination.html">
+            <h2
+              class="text-xl font-bold text-primary dark:text-secondary py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-800 w-full text-center"
+            >
+              Destination
+            </h2>
+          </a>
+          <a href="./event.html">
+            <h2
+              class="text-xl font-bold text-primary dark:text-secondary py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-800 w-full text-center"
+            >
+              Event
+            </h2>
+          </a>
+          <a href="./about.html">
+            <h2
+              class="text-xl font-bold text-primary dark:text-secondary py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-800 w-full text-center"
+            >
+              About Us
+            </h2>
+          </a>
+          <div
+            class="flex flex-col items-start ml-4 gap-4 py-4 mt-4 border-t border-gray-200 dark:border-neutral-700 w-full"
+          >
+            <button
+              type="button"
+              class="hs-dark-mode-active:hidden block hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              data-hs-theme-click-value="dark"
+            >
+              <span
+                class="group inline-flex shrink-0 justify-center items-center size-9"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+              </span>
+            </button>
+            <button
+              type="button"
+              class="hs-dark-mode-active:block hidden hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              data-hs-theme-click-value="light"
+            >
+              <span
+                class="group inline-flex shrink-0 justify-center items-center size-9"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M12 2v2"></path>
+                  <path d="M12 20v2"></path>
+                  <path d="m4.93 4.93 1.41 1.41"></path>
+                  <path d="m17.66 17.66 1.41 1.41"></path>
+                  <path d="M2 12h2"></path>
+                  <path d="M20 12h2"></path>
+                  <path d="m6.34 17.66-1.41 1.41"></path>
+                  <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+              </span>
+            </button>
+            <div id="user-action-button">
+                    <a href="./user-login.html">
+                        <button class="bg-primary p-[0.8rem_1.2rem] rounded-lg text-white font-bold hover:bg-[#0653ad] transition duration-500 hover:duration-500 cursor-pointer w-fit">
+                      Log In
+                    </button>
+                    </a>    
+                </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+  <main class="max-w-screen-xl mx-auto p-10">
+    <!-- Dynamic content will be inserted here -->
+    <div id="hotel-detail" class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+      <!-- Left side: images & description -->
+      <div>
+        <img id="hotelImage" class="rounded-xl w-full" src="" alt="Hotel image"/>
+        <h1 id="hotelName" class="text-4xl font-bold mt-5 mb-2"></h1>
+        <p id="hotelLocation" class="text-xl text-gray-500 mb-4"></p>
+        <p id="hotelDescription" class="text-justify leading-7"></p>
+      </div>
+
+      <!-- Right side: booking info -->
+      <div class="bg-gray-100 dark:bg-neutral-800 p-8 rounded-2xl shadow-lg">
+        <h2 class="text-2xl font-bold mb-5 text-primary">Booking Information</h2>
+        <p class="mb-2"><strong>Price per night:</strong> $<span id="hotelPrice"></span></p>
+        <p class="mb-5"><strong>Available rooms:</strong> <span id="hotelRooms"></span></p>
+        <button class="bg-secondary text-white font-semibold px-6 py-3 rounded-xl hover:bg-yellow-600 transition duration-300">Book Now</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-primary text-white text-center py-10 mt-20">
+    &copy; 2025 MaTrip.com - Hotel Service
+  </footer>
+
+  <script src="../script/hotel-detail.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

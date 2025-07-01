@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/input.css" />
+    <link rel="stylesheet" href="../style/output.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>about</title>
+  </head>
+  <body class="dark:bg-neutral-900">
+    <header id="start" class="bg-white dark:bg-black">
+      <section
+        class="fixed top-0 left-0 w-full bg-white/70 dark:bg-black/80 dark:border-neutral-500 backdrop-blur-2xl border-b-1 border-neutral-300 z-99">
+        <div
+          id="scrollBar"
+          class="absolute top-0 left-0 bg-primary h-2 w-[0%] z-999"
+        ></div>
+        <nav
+          class="container z-10 flex justify-between items-center h-20 max-w-screen-xl mx-auto px-4 lg:px-0">
+          <div class="flex-shrink-0">
+            <a href="/index.html">
+              <img
+                class="transition duration-500 cursor-pointer hover:scale-110 hover:duration-500"
+                width="100"
+                src="/assets/img/logo.png"
+                alt="logo"
+              />
+            </a>
+          </div>
+          <button
+            id="menu-toggle"
+            class="md:hidden text-primary dark:text-secondary focus:outline-none p-2"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+          <div
+            id="nav-desktop-center-group"
+            class="hidden md:flex flex-grow justify-start md:justify-center"
+          >
+            <div
+              id="nav-links-desktop"
+              class="flex items-center gap-20 md:gap-10 lg:gap-20 text-xl font-bold transition duration-500 text-primary dark:text-secondary"
+            >
+              <a href="./tour.html">
+                <h2
+                  class="transition duration-500 hover:scale-110 hover:underline hover:underline-offset-2 hover:duration-500"
+                >
+                  Tour
+                </h2>
+              </a>
+              <a href="./destination.html">
+                <h2
+                  class="transition duration-500 hover:scale-110 hover:underline hover:underline-offset-2 hover:duration-500"
+                >
+                  Destination
+                </h2>
+              </a>
+              <a href="./event.html">
+                <h2
+                  class="transition duration-500 hover:scale-110 hover:underline hover:underline-offset-2 hover:duration-500"
+                >
+                  Event
+                </h2>
+              </a>
+              <a href="./about.html">
+                <h2
+                  class="transition duration-500 hover:scale-110 hover:underline hover:underline-offset-2 hover:duration-500"
+                >
+                  About Us
+                </h2>
+              </a>
+            </div>
+          </div>
+          <div
+            id="nav-desktop-right-buttons"
+            class="hidden md:flex items-center gap-4 lg:gap-10 flex-shrink-0"
+          >
+            <button
+              type="button"
+              class="hs-dark-mode-active:hidden block hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              data-hs-theme-click-value="dark"
+            >
+              <span
+                class="group inline-flex shrink-0 justify-center items-center size-9"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+              </span>
+            </button>
+            <button
+              type="button"
+              class="hs-dark-mode-active:block hidden hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              data-hs-theme-click-value="light"
+            >
+              <span
+                class="group inline-flex shrink-0 justify-center items-center size-9"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M12 2v2"></path>
+                  <path d="M12 20v2"></path>
+                  <path d="m4.93 4.93 1.41 1.41"></path>
+                  <path d="m17.66 17.66 1.41 1.41"></path>
+                  <path d="M2 12h2"></path>
+                  <path d="M20 12h2"></path>
+                  <path d="m6.34 17.66-1.41 1.41"></path>
+                  <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+              </span>
+            </button>
+            <div id="user-action-button">
+                    <a href="./user-login.html">
+                        <button class="bg-primary p-[0.8rem_1.2rem] rounded-lg text-white font-bold hover:bg-[#0653ad] transition duration-500 hover:duration-500 cursor-pointer w-fit">
+                      Log In
+                    </button>
+                    </a>    
+                </div>
+          </div>
+        </nav>
+      </section>
+      <div
+        id="nav-links-mobile"
+        class="hidden fixed top-20 left-0 w-full bg-white dark:bg-black overflow-y-auto"
+        style="height: calc(100vh - 80px); z-index: 95"
+      >
+        <div class="flex flex-col items-start py-4 w-full">
+          <a href="./tour.html">
+            <h2
+              class="text-xl font-bold text-primary dark:text-secondary py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-800 w-full text-center"
+            >
+              Tour
+            </h2>
+          </a>
+          <a href="./destination.html">
+            <h2
+              class="text-xl font-bold text-primary dark:text-secondary py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-800 w-full text-center"
+            >
+              Destination
+            </h2>
+          </a>
+          <a href="./event.html">
+            <h2
+              class="text-xl font-bold text-primary dark:text-secondary py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-800 w-full text-center"
+            >
+              Event
+            </h2>
+          </a>
+          <a href="./about.html">
+            <h2
+              class="text-xl font-bold text-primary dark:text-secondary py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-800 w-full text-center"
+            >
+              About Us
+            </h2>
+          </a>
+          <div
+            class="flex flex-col items-start ml-4 gap-4 py-4 mt-4 border-t border-gray-200 dark:border-neutral-700 w-full"
+          >
+            <button
+              type="button"
+              class="hs-dark-mode-active:hidden block hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              data-hs-theme-click-value="dark"
+            >
+              <span
+                class="group inline-flex shrink-0 justify-center items-center size-9"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+              </span>
+            </button>
+            <button
+              type="button"
+              class="hs-dark-mode-active:block hidden hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              data-hs-theme-click-value="light"
+            >
+              <span
+                class="group inline-flex shrink-0 justify-center items-center size-9"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M12 2v2"></path>
+                  <path d="M12 20v2"></path>
+                  <path d="m4.93 4.93 1.41 1.41"></path>
+                  <path d="m17.66 17.66 1.41 1.41"></path>
+                  <path d="M2 12h2"></path>
+                  <path d="M20 12h2"></path>
+                  <path d="m6.34 17.66-1.41 1.41"></path>
+                  <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+              </span>
+            </button>
+            <div id="user-action-button">
+                    <a href="./user-login.html">
+                        <button class="bg-primary p-[0.8rem_1.2rem] rounded-lg text-white font-bold hover:bg-[#0653ad] transition duration-500 hover:duration-500 cursor-pointer w-fit">
+                      Log In
+                    </button>
+                    </a>    
+                </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="mt-15">
+        <section
+        data-aos="fade-up"
+            data-aos-delay="200"
+        class="relative">
+            <div 
+            
+            class="container max-w-screen-xl mx-auto abt-hero-section h-[90vh] flex flex-col justify-center">
+               <h1
+              data-aos="fade-right"
+            data-aos-delay="200" 
+                class="font-bold text-7xl text-primary">MaTrip <span class="text-secondary">Team</span></h1> 
+                <p 
+                data-aos="fade-left"
+            data-aos-delay="300"
+                class="p-5 my-10 space-y-3 text-xl leading-9 text-black/90 rounded-xl bg-white/60 backdrop-blur-xl w-130">MaTrip was created by a team of students from ISTAD who love travel and technology. We built this website as part of our learning journey to improve our web development skills and solve a real-world problem for making travel planning simple, smart, and fun.</p>
+               
+            </div>
+            <a
+            href="">
+                <button
+                 class="p-[1rem_1.2rem] rounded-xl bg-secondary absolute bottom-20 left-30 cursor-pointer font-semibold text-white hover:scale-110 transition duration-500">Learn more </button>
+            </a>
+        </section>
+
+        <section class="relative">
+            <div
+          id="circle-tl"
+          class="absolute size-30 bg-ascent rounded-full top-[-4.5rem] z-[-1]"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        ></div>
+        <div
+          id="circle-tr"
+          class="absolute size-25 bg-secondary rounded-full top-[-1rem] right-0 z-[-1]"
+          data-aos="fade-down-left"
+          data-aos-delay="400"
+        ></div>
+        <div
+          id="circle-bl"
+          class="absolute size-15 bg-ascent rounded-full bottom-[10rem] left-[5rem] z-[-1]"
+          data-aos="fade-up-right"
+          data-aos-delay="500"
+        ></div>
+        <div
+          id="circle-br"
+          class="absolute size-45 bg-primary rounded-full bottom-[-5rem] right-[15rem] z-[-1]"
+          data-aos="zoom-in"
+          data-aos-delay="00"
+        ></div>
+        
+            <div class="container grid max-w-screen-xl grid-cols-2 mx-auto mt-20 gap-50 ">
+                <div data-aos="fade-right" data-aos-delay="800">
+                    <img
+                    data-aos="fade-right" data-aos-delay="200"
+                    class="mx-auto"
+                    src="../../assets/img/Aircraft-pana (1).png" alt="">
+                    <h2 data-aos="fade-right" data-aos-delay="300" class="mb-10 text-3xl font-bold text-primary dark:text-secondary">Discover Our Travel Guideline</h2>
+                    <p data-aos="fade-right" data-aos-delay="400" class="text-xl text-gray-600 dark:text-gray-200">Get ready to explore with confidence.MaTrip's travel guideline gives you all the essentials tips, checklists, and advice for a smooth and safe journey.</p> <br>
+                    <p data-aos="fade-right" data-aos-delay="500" class="mb-10 text-xl text-gray-600 dark:text-gray-200">Make your trip easy and stress-free with MaTrip's simple guide.From what to pack to safety tips we've got you covered.Travel smart. Travel safe. Travel with MaTrip.</p>
+                    <button class="p-[1rem_1.2rem] border-2 border-secondary text-secondary rounded-xl font-semibold hover:scale-110 transition duration-500 cursor-pointer">Contact Us</button>
+                </div>
+                <div class="">
+                        <div data-aos="fade-up" data-aos-delay="100" class="absolute z-10 p-8 right-140 top-10 bg-ascent">
+                            <img
+                             class="mx-auto mb-3" 
+                             src="../../assets/img/small-plan.png" alt="">
+                            <h4 class="mb-3 text-3xl font-bold text-center text-white">10M</h4>
+                            <p class="text-lg text-center text-white">Different parts</p>
+                        </div>
+                       <img
+                       data-aos="fade-left" data-aos-delay="100"
+                       class="w-full z-[-1]"
+                       src="../../assets/img/abt-section-1.png" alt=""> 
+                       
+                    
+                    <div>
+                        <div class="flex items-center mt-10">
+                            <img data-aos="fade-left" data-aos-delay="200" src="../../assets/img/abt-vec-1.png" alt="">
+                            <div class="ml-7">
+                                <h3 data-aos="fade-left" data-aos-delay="400" class="mb-2 text-2xl font-bold text-secondary">Reliable & Fully Insured</h3>
+                                <p data-aos="fade-left" data-aos-delay="400" class="dark:text-gray-200">Your safety is our top priority - we guarantee secure, worry-free experiences every step of the way.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center mt-10">
+                            <img data-aos="fade-left" data-aos-delay="500" src="../../assets/img/abt-vec-2.png" alt="">
+                            <div class="ml-7">
+                                <h3 data-aos="fade-left" data-aos-delay="500" class="mb-2 text-2xl font-bold text-secondary">Trusted & Experienced</h3>
+                                <p data-aos="fade-left" data-aos-delay="500" class="dark:text-gray-200">With years of proven expertise, we deliver exceptional service you can count on every time.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section>
+            <div class="container relative grid max-w-screen-xl grid-cols-2 mx-auto mt-60 gap-30 h-[70vh]">
+                <div class="relative" >
+                    <h2 data-aos="fade-right" data-aos-delay="100" class="mb-10 text-3xl font-bold text-primary dark:text-secondary">Our Popular Tours</h2>
+                    <p data-aos="fade-right"
+          data-aos-delay="300" class="mb-10 dark:text-gray-200">At Ma Trip, we carefully craft tours that travelers love the most. These popular tours highlight the best destinations, unique experiences, and hidden gems to make your journey unforgettable. Whether you're seeking adventure, cultural exploration, or relaxing escapes, our top tours are designed to offer something special for every type of traveler. Join thousands of happy travelers who have enjoyed these amazing trips and find your perfect travel experience with us.</p>
+                    <div>
+                        <h3 data-aos="fade-right"
+          data-aos-delay="100" class="dark:text-gray-200">Countryside</h3>
+                        <p data-aos="fade-left"
+          data-aos-delay="300" class="absolute right-0 bottom-50 dark:text-gray-200">100%</p>
+                        <div data-aos="fade-right"
+          data-aos-delay="500" class="w-full h-3 mt-3 mb-7 bg-ascent "></div>
+                    </div>
+                    <div>
+                        <h3 data-aos="fade-right"
+          data-aos-delay="100" class="dark:text-gray-200">Temples</h3>
+                        <p data-aos="fade-left"
+          data-aos-delay="300" class="absolute right-0 bottom-32 dark:text-gray-200">100%</p>
+                        <div data-aos="fade-right"
+          data-aos-delay="500" class="w-full h-3 mt-3 mb-7 bg-ascent "></div>
+                    </div>
+                    <div>
+                        <h3 data-aos="fade-right"
+          data-aos-delay="100" class="dark:text-gray-200">Beach</h3>
+                        <p data-aos="fade-left"
+          data-aos-delay="300" class="absolute right-0 bottom-12 dark:text-gray-200">100%</p>
+                        <div data-aos="fade-right"
+          data-aos-delay="500" class="w-full h-3 mt-3 mb-7 bg-ascent "></div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img
+                        data-aos="fade-left"
+          data-aos-delay="200" 
+                        class="rounded-t-[8rem] rounded-b-[8rem] border-8 border-gray-200 shadow-2xl shadow-gray-600 w-80 absolute top-0 right-0"
+                        src="../../assets/img/abt-section-2.png" alt="">
+                    </div>
+                    <div>
+                        <img 
+                        data-aos="fade-right"
+          data-aos-delay="400"
+                        class="rounded-t-[5rem] rounded-b-[5rem] border-8 border-gray-200 shadow-2xl shadow-gray-600 w-60 absolute top-50 right-50"
+                        src="../../assets/img/abt-section-3.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="max-w-screen-xl mx-auto mt-40 conntainer">
+                <div>
+                    <img 
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                        class="mx-auto w-150"
+                        src="../../assets/img/Woman thinking-bro (1).png" alt="">
+                    <h2  data-aos="fade-left"
+                        data-aos-delay="300" class="text-3xl font-bold text-center text-primary dark:text-secondary">Do you have some Questions?</h2>
+                    <p  data-aos="fade-right"
+                        data-aos-delay="500" class="mt-5 text-center mb-20 dark:text-gray-200">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, repudiandae.</p> 
+                </div>
+
+                <div>
+                    <div class="max-w-2xl mx-auto">
+    <div  data-aos="fade-up"
+          data-aos-delay="500" class="hs-accordion-group">
+      <div data-aos="fade-up"
+          data-aos-delay="500" class="p-6 cursor-pointer hs-accordion hs-accordion-active:bg-gray-100 rounded-xl dark:hs-accordion-active:bg-white/10 active" id="hs-basic-with-title-and-arrow-stretched-heading-one">
+        <button class="inline-flex items-center justify-between w-full pb-3 font-semibold text-gray-800 transition rounded-lg hs-accordion-toggle group gap-x-3 md:text-lg text-start hover:text-gray-500 focus:outline-hidden focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="true" aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one">
+          What destinations does MaTrip cover?
+          <svg class="block text-gray-600 hs-accordion-active:hidden shrink-0 size-5 group-hover:text-gray-500 dark:text-neutral-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          <svg class="hidden text-gray-600 hs-accordion-active:block shrink-0 size-5 group-hover:text-gray-500 dark:text-neutral-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+        </button>
+        <div id="hs-basic-with-title-and-arrow-stretched-collapse-one" class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-one">
+          <p class="text-gray-800 dark:text-neutral-200">
+             Currently, MaTrip focuses on destinations within Cambodia — including Angkor Wat, Kampot, Mondulkiri, Koh Rong, and many other beautiful local spots.
+          </p>
+        </div>
+      </div>
+
+      <div data-aos="fade-up"
+          data-aos-delay="100" class="p-6 hs-accordion hs-accordion-active:bg-gray-100 rounded-xl dark:hs-accordion-active:bg-white/10 " id="hs-basic-with-title-and-arrow-stretched-heading-two">
+        <button class="inline-flex items-center justify-between w-full pb-3 font-semibold text-gray-800 transition rounded-lg hs-accordion-toggle group gap-x-3 md:text-lg text-start hover:text-gray-500 focus:outline-hidden focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two">
+          Can I customize my trip with MaTrip?
+          <svg class="block text-gray-600 hs-accordion-active:hidden shrink-0 size-5 group-hover:text-gray-500 dark:text-neutral-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          <svg class="hidden text-gray-600 hs-accordion-active:block shrink-0 size-5 group-hover:text-gray-500 dark:text-neutral-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+        </button>
+        <div id="hs-basic-with-title-and-arrow-stretched-collapse-two" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two">
+          <p class="text-gray-800 dark:text-neutral-200">
+            Yes! You can choose your destination, trip duration, and preferences. Our team will help plan a personalized travel experience just for you.
+          </p>
+        </div>
+      </div>
+
+      <div data-aos="fade-up"
+          data-aos-delay="200" class="p-6 hs-accordion hs-accordion-active:bg-gray-100 rounded-xl dark:hs-accordion-active:bg-white/10 " id="hs-basic-with-title-and-arrow-stretched-heading-three">
+        <button class="inline-flex items-center justify-between w-full pb-3 font-semibold text-gray-800 transition rounded-lg hs-accordion-toggle group gap-x-3 md:text-lg text-start hover:text-gray-500 focus:outline-hidden focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-three">
+          What's included in a typical MaTrip package?
+          <svg class="block text-gray-600 hs-accordion-active:hidden shrink-0 size-5 group-hover:text-gray-500 dark:text-neutral-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          <svg class="hidden text-gray-600 hs-accordion-active:block shrink-0 size-5 group-hover:text-gray-500 dark:text-neutral-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+        </button>
+        <div id="hs-basic-with-title-and-arrow-stretched-collapse-three" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-three">
+          <p class="text-gray-800 dark:text-neutral-200">
+            Our packages often include round-trip transport, hotel stays, local guides, and selected meals. Each trip page lists exactly what's included.
+          </p>
+        </div>
+      </div>
+
+      <div data-aos="fade-up"
+          data-aos-delay="300" class="p-6 hs-accordion hs-accordion-active:bg-gray-100 rounded-xl dark:hs-accordion-active:bg-white/10 " id="hs-basic-with-title-and-arrow-stretched-heading-four">
+        <button class="inline-flex items-center justify-between w-full pb-3 font-semibold text-gray-800 transition rounded-lg hs-accordion-toggle group gap-x-3 md:text-lg text-start hover:text-gray-500 focus:outline-hidden focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four">
+          How can I pay for my trip?
+          <svg class="block text-gray-600 hs-accordion-active:hidden shrink-0 size-5 group-hover:text-gray-500 dark:text-neutral-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          <svg class="hidden text-gray-600 hs-accordion-active:block shrink-0 size-5 group-hover:text-gray-500 dark:text-neutral-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+        </button>
+        <div id="hs-basic-with-title-and-arrow-stretched-collapse-four" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-four">
+          <p class="text-gray-800 dark:text-neutral-200">
+            We accept Visa, MasterCard, local bank transfers, and KHQR code payments for fast and secure checkout.
+          </p>
+        </div>
+      </div>
+
+      <div data-aos="fade-up"
+          data-aos-delay="400" class="p-6 hs-accordion hs-accordion-active:bg-gray-100 rounded-xl dark:hs-accordion-active:bg-white/10 " id="hs-basic-with-title-and-arrow-stretched-heading-five">
+        <button class="inline-flex items-center justify-between w-full pb-3 font-semibold text-gray-800 transition rounded-lg hs-accordion-toggle group gap-x-3 md:text-lg text-start hover:text-gray-500 focus:outline-hidden focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-five">
+          Can I cancel or change my booking?
+          <svg class="block text-gray-600 hs-accordion-active:hidden shrink-0 size-5 group-hover:text-gray-500 dark:text-neutral-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          <svg class="hidden text-gray-600 hs-accordion-active:block shrink-0 size-5 group-hover:text-gray-500 dark:text-neutral-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+        </button>
+        <div id="hs-basic-with-title-and-arrow-stretched-collapse-five" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-five">
+          <p class="text-gray-800 dark:text-neutral-200">
+           Yes, you can cancel or reschedule up to 72 hours before your trip. Please check our cancellation policy for full details.
+        </div>
+      </div>
+
+      <div data-aos="fade-up"
+          data-aos-delay="500" class="p-6 hs-accordion hs-accordion-active:bg-gray-100 rounded-xl dark:hs-accordion-active:bg-white/10" id="hs-basic-with-title-and-arrow-stretched-heading-six">
+        <button class="inline-flex items-center justify-between w-full pb-3 font-semibold text-gray-800 transition rounded-lg hs-accordion-toggle group gap-x-3 md:text-lg text-start hover:text-gray-500 focus:outline-hidden focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-six">
+          Upgrade License Type
+          <svg class="block text-gray-600 hs-accordion-active:hidden shrink-0 size-5 group-hover:text-gray-500 dark:text-neutral-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          <svg class="hidden text-gray-600 hs-accordion-active:block shrink-0 size-5 group-hover:text-gray-500 dark:text-neutral-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+        </button>
+        <div id="hs-basic-with-title-and-arrow-stretched-collapse-six" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-six">
+          <p class="text-gray-800 dark:text-neutral-200">
+            There may be times when you need to upgrade your license from the original type you purchased and we have a solution that ensures you can apply your original purchase cost to the new license purchase.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+                </div>
+            
+            </div>
+        </section>
+<section class="py-16" id="contact">
+        <div class="max-w-screen-xl mx-auto my-20">
+    
+    <!-- Section Header -->
+          <div class="text-center mb-12">
+            <h2 data-aos="fade-right" data-aos-delay="200" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 dark:text-secondary">Get In Touch</h2>
+            <p data-aos="fade-up" data-aos-delay="400" class="text-gray-600 max-w-xl mx-auto text-sm md:text-base dark:text-gray-200">
+              We will create high quality likable content and build at least 40 high-authority link to each asset, paving the way for you to grow your rankings, improve brand.
+            </p>
+          </div>
+
+    <!-- Contact Content -->
+        <div class="rounded-xl shadow-lg p-6 md:py-10 flex flex-col md:flex-row gap-8">
+      
+      <!-- Contact Info Box -->
+      <div data-aos="fade-right"  class="bg-teal-500 text-white p-6 rounded-lg md:w-1/2">
+        <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+        <p class="text-sm mb-6">
+          We will create high quality likable content and build at least 40 high-authority link to each asset
+        </p>
+        <div class="space-y-3 text-sm">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-phone fa-lg text-primary dark:text-secondary"></i><br>
+            <p>+88581797942</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-envelope fa-lg text-primary dark:text-secondary"></i><br>
+            <span>MaTrip12@gmail.com</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-location-dot fa-lg text-primary dark:text-secondary"></i> <br>
+            <span>Kampuchea krom, Teuk Thla, Toul Kork, Phnom Penh, Cambodia</span>
+          </div>
+        </div>
+      </div>
+      <form data-aos="fade-left" id="contactForm" class=" mx-auto md:w-1/2 space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm text-primary font-semibold mb-1 dark:text-secondary">Your Name</label>
+            <input id="name" type="text" placeholder="Tith Cholna" class="w-full rounded-lg focus:outline-none focus:border-ascent p-2 bg-transparent dark:text-gray-200" />
+          </div>
+          <div>
+            <label class="block text-sm text-primary font-semibold mb-1 dark:text-secondary">Your Email</label>
+            <input id="email" type="email" placeholder="cholna168@gmail.com" class="w-full rounded-lg focus:outline-none focus:border-ascent p-2 bg-transparent dark:text-gray-200" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm text-primary font-semibold mb-1 dark:text-secondary">Your Subject</label>
+          <input id="subject" type="text" placeholder="Can we still go even if we're broke?" class="w-full rounded-lg focus:outline-none focus:border-ascent p-2 bg-transparent dark:text-gray-200" />
+        </div>
+
+        <div>
+          <label class="block text-primary font-semibold mb-1 dark:text-secondary">Message</label>
+          <textarea id="message" rows="4" placeholder="Write your message here" class="w-full rounded-lg focus:outline-none focus:border-ascent p-2 bg-transparent dark:text-gray-200"></textarea>
+        </div>
+
+        <button type="submit" class="bg-teal-500 text-white px-6 py-2 rounded hover:bg-ascent transition cursor-pointer">
+          Send message
+        </button>
+      </form>
+      </section>
+
+        <section>
+          <div class="max-w-screen-xl container mx-auto">
+            <h2 data-aos="fade-up" data-aos-delay="100" class="mt-20 text-3xl font-bold text-center text-primary dark:text-secondary">Team Member</h2>
+            <div>
+              <div data-aos="flip-down" data-aos-delay="300" class="flex gap-50 justify-center mt-20 transform-3d">
+                <div class="border-gray-300 shadow-2xl w-70 h-100 border-1 rounded-2xl hover:translate-z-5 hover:rotate-x-10 hover:rotate-z-5 transition duration-500">
+                  <img 
+                    class="mx-auto mt-10 mb-5 border-white rounded-full shadow-2xl shadow-gray-600 border-5 w-50 outline-1 outline-secondary"
+                    src="../../assets/img/ratana.png" alt="">
+                  <h3 class="mb-3 text-xl font-bold text-center dark:text-gray-200">Svay Sereyratana</h3>
+                  <p class="text-center dark:text-gray-200">Frontend</p>
+                  <div class="flex justify-center mt-3 gap-15 dark:text-gray-200">
+                    <a href="https://t.me/@SS_Ratana" target="_blank">
+                      <i class="text-2xl rounded-full fa-brands fa-telegram hover:scale-120 transition duration-500"></i>
+                    </a>
+                    <a href="mailto:svaysereyratana385@gmail.com" target="_blank">
+                      <i class="text-2xl rounded-full fa-solid fa-envelope hover:scale-120 transition duration-500"></i>
+                    </a>
+                    <a href="https://github.com/SvaySereyratana" target="_blank">
+                      <i class="text-2xl rounded-full fa-brands fa-github hover:scale-120 transition duration-500"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="border-gray-300 shadow-2xl w-70 h-100 border-1 rounded-2xl hover:translate-z-5 hover:rotate-x-10 hover:rotate-z-5 transition duration-500">
+                  <img 
+                    class="mx-auto mt-10 mb-5 border-white rounded-full shadow-2xl shadow-gray-600 border-5 w-51 outline-1 outline-secondary"
+                    src="../../assets/img/wath.jpg" alt="">
+                  <h3 class="mb-3 text-xl font-bold text-center dark:text-gray-200">Mey Panhawath</h3>
+                  <p class="text-center dark:text-gray-200">Frontend</p>
+                  <div class="flex justify-center mt-3 gap-15 cursor-pointer dark:text-gray-200">
+                    <a href="https://t.me/definitelynotraz" target="_blank">
+                      <i class="text-2xl rounded-full fa-brands fa-telegram hover:scale-120 transition duration-500"></i>
+                    </a>
+                    <a href="mailto:panhawath18@gmail.com" target="_blank">
+                      <i class="text-2xl rounded-full fa-solid fa-envelope hover:scale-120 transition duration-500"></i>
+                    </a>
+                    <a href="https://github.com/meypanhawath" target="_blank">
+                      <i class="text-2xl rounded-full fa-brands fa-github hover:scale-120 transition duration-500"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+
+              <div data-aos="flip-down" data-aos-delay="500" class="flex justify-between  mt-50 transform-3d">
+                <div class="border-gray-300 shadow-2xl w-70 h-100 border-1 rounded-2xl hover:translate-z-5 hover:rotate-x-10 hover:rotate-z-5 transition duration-500">
+                  <img 
+                    class="mx-auto mt-10 mb-5 border-white rounded-full shadow-2xl shadow-gray-600 border-5 w-50 outline-1 outline-secondary"
+                    src="../../assets/img/cholna-2.png" alt="">
+                  <h3 class="mb-3 text-xl font-bold text-center dark:text-gray-200">Tith Cholna</h3>
+                  <p class="text-center dark:text-gray-200">Frontend</p>
+                  <div class="flex justify-center mt-3 gap-15 dark:text-gray-200">
+                    <a href="https://t.me/Cholna07" target="_blank">
+                      <i class="text-2xl rounded-full fa-brands fa-telegram hover:scale-120 transition duration-500"></i>
+                    </a>
+                    <a href="mailto:tithcholna742@gmail.com" target="_blank">
+                      <i class="text-2xl rounded-full fa-solid fa-envelope hover:scale-120 transition duration-500"></i>
+                    </a>
+                    <a href="https://github.com/ativity11212" target="_blank">
+                      <i class="text-2xl rounded-full fa-brands fa-github hover:scale-120 transition duration-500"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="border-gray-300 shadow-2xl w-70 h-100 border-1 rounded-2xl hover:translate-z-5 hover:rotate-x-10 hover:rotate-z-5 transition duration-500">
+                  <img 
+                    class="mx-auto mt-10 mb-5 border-white rounded-full shadow-2xl shadow-gray-600 border-5 w-50 outline-1 outline-secondary"
+                    src="../../assets/img/dana.png" alt="">
+                  <h3 class="mb-3 text-xl font-bold text-center dark:text-gray-200">Dorn Dana</h3>
+                  <p class="text-center dark:text-gray-200">Frontend</p>
+                  <div class="flex justify-center mt-3 gap-15 dark:text-gray-200">
+                    <a href="https://t.me/scor_dd" target="_blank">
+                      <i class="text-2xl rounded-full fa-brands fa-telegram hover:scale-120 transition duration-500"></i>
+                    </a>
+                    <a href="mailto:dorndana8899@gmail.com" target="_blank">
+                      <i class="text-2xl rounded-full fa-solid fa-envelope hover:scale-120 transition duration-500"></i>
+                    </a>
+                    <a href="https://github.com/danadorn" target="_blank">
+                      <i class="text-2xl rounded-full fa-brands fa-github hover:scale-120 transition duration-500"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="border-gray-300 shadow-2xl w-70 h-100 border-1 rounded-2xl hover:translate-z-5 hover:rotate-x-10 hover:rotate-z-5 transition duration-500">
+                  <img 
+                    class="mx-auto mt-10 mb-5 border-white rounded-full shadow-2xl shadow-gray-600 border-5 w-50 outline-1 outline-secondary"
+                    src="../../assets/img/net.png" alt="">
+                  <h3 class="mb-3 text-xl font-bold text-center dark:text-gray-200">Mon Sreynet</h3>
+                  <p class="text-center dark:text-gray-200">Frontend</p>
+                  <div class="flex justify-center mt-3 gap-15 dark:text-gray-200">
+                    <a href="https://t.me/sreynetmon" target="_blank">
+                      <i class="text-2xl rounded-full fa-brands fa-telegram hover:scale-120 transition duration-500"></i>
+                    </a>
+                    <a href="mailto:monsreynet2409@gmail.com" target="_blank">
+                      <i class="text-2xl rounded-full fa-solid fa-envelope hover:scale-120 transition duration-500"></i>
+                    </a>
+                    <a href="https://github.com/sreynetmon" target="_blank">
+                      <i class="text-2xl rounded-full fa-brands fa-github hover:scale-120 transition duration-500"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </section>
+
+        
+    </main>
+
+    <footer
+      class="bg-primary text-white mt-20 h-[60vh] dark:bg-black"
+      data-aos="fade-up"
+      data-aos-delay="300"
+    >
+      <section class="border-gray-400 border-b-1">
+        <div
+          class="container grid items-center h-full max-w-screen-xl grid-cols-4 gap-20 mx-auto"
+        >
+          <div class="h-full mt-25">
+            <a href="../index.html">
+              <img
+                width="250"
+                src="../../assets/img/logo.png"
+                alt=""
+                data-aos="fade-down"
+              />
+            </a>
+          </div>
+          <div data-aos="fade-right" data-aos-delay="200" class="h-full mt-30">
+            <h2 class="mb-5 text-xl font-bold text-secondary">Support</h2>
+            <a
+              class="block mt-2 font-light hover:font-bold hover:underline duration-800"
+              href="../index.html#start"
+              >Customer Support</a
+            >
+            <a
+              class="block mt-2 font-light hover:font-bold hover:underline duration-800"
+              href="../index.html#start"
+              >Privacy & Policy</a
+            >
+            <a
+              class="block mt-2 font-light hover:font-bold hover:underline duration-800"
+              href="../index.html#start"
+              >Contact Channels</a
+            >
+          </div>
+          <div data-aos="fade-right" data-aos-delay="400" class="h-full mt-30">
+            <h2 class="mb-5 text-xl font-bold text-secondary">About Us</h2>
+            <a
+              class="block mt-2 font-light hover:font-bold hover:underline duration-800"
+              href="../index.html#start"
+              >Out Story</a
+            >
+            <a
+              class="block mt-2 font-light hover:font-bold hover:underline duration-800"
+              href="../index.html#start"
+              >Travel Blog & Tips</a
+            >
+            <a
+              class="block mt-2 font-light hover:font-bold hover:underline duration-800"
+              href="../index.html#start"
+              >Working with Us</a
+            >
+            <a
+              class="block mt-2 font-light hover:font-bold hover:underline duration-800"
+              href="../index.html#start"
+              >Be Our Partner</a
+            >
+          </div>
+          <div data-aos="fade-right" data-aos-delay="600" class="h-full mt-30">
+            <h2 class="mb-5 text-xl font-bold text-secondary">Contact Info</h2>
+            <p class="mb-8 font-light">
+              135 kampuchea krom ,Teuk Thla Toul Kork ,Phnom Penh Cambodia
+            </p>
+            <a
+              class="block mt-2 font-light hover:font-bold hover:underline duration-800"
+              href="mailto:MaTrip12@gmail.com"
+            >
+              <i class="mr-3 fa-solid fa-envelope text-secondary"></i
+              >MaTrip12@gmail.com</a
+            >
+            <a
+              class="block mt-2 font-light hover:font-bold hover:underline duration-800"
+              href="tel:+85512345678"
+            >
+              <i class="mr-3 fa-solid fa-phone-volume text-secondary"></i>+855
+              12345678</a
+            >
+          </div>
+        </div>
+      </section>
+      <div
+        class="container flex items-center justify-between max-w-screen-xl mx-auto mt-5"
+      >
+        <p class="text-sm font-light">© Copyright 2025 by Matrip.com</p>
+        <div class="flex gap-3">
+          <img src="../../assets/img/visa.png" alt="" />
+          <img src="../../assets/img/aba.png" alt="" />
+          <img src="../../assets/img/acleda.png" alt="" />
+          <img src="../../assets/img/paypal.png" alt="" />
+        </div>
+      </div>
+    </footer>
+
+  <script src="https://unpkg.com/preline@latest/dist/preline.js"></script>
+  </body>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false,
+      easing: "ease-in-out",
+    });
+  </script>
+  <script src="../script/scroll-progress.js"></script>
+  <script src="../script/toggle.js"></script>
+</html>

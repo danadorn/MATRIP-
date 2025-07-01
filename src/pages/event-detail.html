@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/input.css" />
+    <link rel="stylesheet" href="../style/output.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Event detail</title>
+  </head>
+  <body class="dark:bg-neutral-900">
+    <header id="start" class="bg-white dark:bg-black">
+      <section
+        class="fixed top-0 left-0 w-full bg-white/70 dark:bg-black/80 dark:border-neutral-500 backdrop-blur-2xl border-b-1 border-neutral-300 z-99">
+        <div
+          id="scrollBar"
+          class="absolute top-0 left-0 bg-primary h-2 w-[0%] z-999"
+        ></div>
+        <nav
+          class="container z-10 flex justify-between items-center h-20 max-w-screen-xl mx-auto px-4 lg:px-0">
+          <div class="flex-shrink-0">
+            <a href="/index.html">
+              <img
+                class="transition duration-500 cursor-pointer hover:scale-110 hover:duration-500"
+                width="100"
+                src="/assets/img/logo.png"
+                alt="logo"
+              />
+            </a>
+          </div>
+          <button
+            id="menu-toggle"
+            class="md:hidden text-primary dark:text-secondary focus:outline-none p-2"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+          <div
+            id="nav-desktop-center-group"
+            class="hidden md:flex flex-grow justify-start md:justify-center"
+          >
+            <div
+              id="nav-links-desktop"
+              class="flex items-center gap-20 md:gap-10 lg:gap-20 text-xl font-bold transition duration-500 text-primary dark:text-secondary"
+            >
+              <a href="./tour.html">
+                <h2
+                  class="transition duration-500 hover:scale-110 hover:underline hover:underline-offset-2 hover:duration-500"
+                >
+                  Tour
+                </h2>
+              </a>
+              <a href="./destination.html">
+                <h2
+                  class="transition duration-500 hover:scale-110 hover:underline hover:underline-offset-2 hover:duration-500"
+                >
+                  Destination
+                </h2>
+              </a>
+              <a href="./event.html">
+                <h2
+                  class="transition duration-500 hover:scale-110 hover:underline hover:underline-offset-2 hover:duration-500"
+                >
+                  Event
+                </h2>
+              </a>
+              <a href="./about.html">
+                <h2
+                  class="transition duration-500 hover:scale-110 hover:underline hover:underline-offset-2 hover:duration-500"
+                >
+                  About Us
+                </h2>
+              </a>
+            </div>
+          </div>
+          <div
+            id="nav-desktop-right-buttons"
+            class="hidden md:flex items-center gap-4 lg:gap-10 flex-shrink-0"
+          >
+            <button
+              type="button"
+              class="hs-dark-mode-active:hidden block hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              data-hs-theme-click-value="dark"
+            >
+              <span
+                class="group inline-flex shrink-0 justify-center items-center size-9"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+              </span>
+            </button>
+            <button
+              type="button"
+              class="hs-dark-mode-active:block hidden hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              data-hs-theme-click-value="light"
+            >
+              <span
+                class="group inline-flex shrink-0 justify-center items-center size-9"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M12 2v2"></path>
+                  <path d="M12 20v2"></path>
+                  <path d="m4.93 4.93 1.41 1.41"></path>
+                  <path d="m17.66 17.66 1.41 1.41"></path>
+                  <path d="M2 12h2"></path>
+                  <path d="M20 12h2"></path>
+                  <path d="m6.34 17.66-1.41 1.41"></path>
+                  <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+              </span>
+            </button>
+            <div id="user-action-button">
+                    <a href="./user-login.html">
+                        <button class="bg-primary p-[0.8rem_1.2rem] rounded-lg text-white font-bold hover:bg-[#0653ad] transition duration-500 hover:duration-500 cursor-pointer w-fit">
+                      Log In
+                    </button>
+                    </a>    
+                </div>
+          </div>
+        </nav>
+      </section>
+      <div
+        id="nav-links-mobile"
+        class="hidden fixed top-20 left-0 w-full bg-white dark:bg-black overflow-y-auto"
+        style="height: calc(100vh - 80px); z-index: 95"
+      >
+        <div class="flex flex-col items-start py-4 w-full">
+          <a href="./tour.html">
+            <h2
+              class="text-xl font-bold text-primary dark:text-secondary py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-800 w-full text-center"
+            >
+              Tour
+            </h2>
+          </a>
+          <a href="./destination.html">
+            <h2
+              class="text-xl font-bold text-primary dark:text-secondary py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-800 w-full text-center"
+            >
+              Destination
+            </h2>
+          </a>
+          <a href="./event.html">
+            <h2
+              class="text-xl font-bold text-primary dark:text-secondary py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-800 w-full text-center"
+            >
+              Event
+            </h2>
+          </a>
+          <a href="./about.html">
+            <h2
+              class="text-xl font-bold text-primary dark:text-secondary py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-800 w-full text-center"
+            >
+              About Us
+            </h2>
+          </a>
+          <div
+            class="flex flex-col items-start ml-4 gap-4 py-4 mt-4 border-t border-gray-200 dark:border-neutral-700 w-full"
+          >
+            <button
+              type="button"
+              class="hs-dark-mode-active:hidden block hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              data-hs-theme-click-value="dark"
+            >
+              <span
+                class="group inline-flex shrink-0 justify-center items-center size-9"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+              </span>
+            </button>
+            <button
+              type="button"
+              class="hs-dark-mode-active:block hidden hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              data-hs-theme-click-value="light"
+            >
+              <span
+                class="group inline-flex shrink-0 justify-center items-center size-9"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M12 2v2"></path>
+                  <path d="M12 20v2"></path>
+                  <path d="m4.93 4.93 1.41 1.41"></path>
+                  <path d="m17.66 17.66 1.41 1.41"></path>
+                  <path d="M2 12h2"></path>
+                  <path d="M20 12h2"></path>
+                  <path d="m6.34 17.66-1.41 1.41"></path>
+                  <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+              </span>
+            </button>
+            <div id="user-action-button">
+                    <a href="./user-login.html">
+                        <button class="bg-primary p-[0.8rem_1.2rem] rounded-lg text-white font-bold hover:bg-[#0653ad] transition duration-500 hover:duration-500 cursor-pointer w-fit">
+                      Log In
+                    </button>
+                    </a>    
+                </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="mt-20">
+      <section
+        id="event-detail-hero-section"
+        class="min-h-[60vh] md:min-h-[70vh] lg:h-[90vh] flex items-center justify-center bg-gradient-to-b from-primary to-blue-400 px-2 sm:px-4 md:px-6"
+      >
+        <div class="max-w-screen-xl container mx-auto">
+          <h2
+            id="eventTitleHero"
+            class="text-3xl sm:text-5xl md:text-7xl text-white font-bold text-center"
+          >
+            Event Detail
+          </h2>
+        </div>
+      </section>
+
+      <section>
+        <div
+          class="max-w-screen-xl container mx-auto mt-10 md:mt-20 px-2 sm:px-4 md:px-6"
+        >
+          <div
+            class="flex flex-col lg:grid lg:grid-cols-[3fr_1fr] gap-8 md:gap-12 lg:gap-20"
+          >
+            <div>
+              <div
+                class="flex flex-col md:flex-row gap-4 md:gap-10 items-start md:items-center"
+              >
+                <div
+                  data-aos="fade-down"
+                  class="flex gap-2 md:gap-3 items-center"
+                >
+                  <i class="fa-solid fa-calendar text-ascent"></i>
+                  <p
+                    id="eventDate"
+                    class="dark:text-gray-200 text-xs md:text-base"
+                  >
+                    14 to 16 - April - 2025
+                  </p>
+                </div>
+                <div
+                  data-aos="fade-down"
+                  class="flex gap-2 md:gap-3 items-center"
+                >
+                  <i class="fa-solid fa-location-dot text-ascent"></i>
+                  <p
+                    id="eventLocation"
+                    class="dark:text-gray-200 text-xs md:text-base"
+                  >
+                    Siem Reap - Cambodia
+                  </p>
+                </div>
+              </div>
+              <h1
+                id="eventTitle"
+                data-aos="fade-right"
+                data-aos-delay="100"
+                class="text-2xl sm:text-4xl md:text-5xl font-bold text-primary my-6 md:my-10 dark:text-secondary"
+              >
+                Angkor Sankranta
+              </h1>
+              <article>
+                <p
+                  id="eventDescription"
+                  data-aos="fade-up"
+                  class="mb-6 md:mb-10 leading-7 md:leading-8 text-justify dark:text-gray-200 text-xs sm:text-sm md:text-base"
+                >
+                  Angkor Sankranta 2025 is a vibrant New Year celebration held
+                  in Siem Reap, Cambodia, during Khmer New Year. In 2025, it
+                  brings together locals and tourists with traditional games,
+                  cultural performances, food fairs, and art displays set around
+                  the iconic Angkor Wat. The event highlights Khmer heritage and
+                  community spirit in a festive, family-friendly atmosphere.
+                </p>
+
+                <img
+                  data-aos="fade-up"
+                  class="w-full max-w-lg rounded-xl mx-auto"
+                  src="../../assets/img/event-1.png"
+                  alt=""
+                />
+
+                <h2
+                  data-aos="fade-right"
+                  class="mt-8 md:mt-10 text-xl sm:text-2xl md:text-3xl text-secondary font-bold mb-6 md:mb-10"
+                >
+                  Across Six Venues
+                </h2>
+                <div>
+                  <p
+                    data-aos="fade-left"
+                    class="leading-8 md:leading-10 text-justify dark:text-gray-200 text-xs sm:text-sm md:text-base"
+                  >
+                    At key locations like Angkor Wat, Royal Garden, Siem Reap
+                    River, King's Road, Pub Street, and Angkor-Gyeongju:
+                  </p>
+                  <ul class="dark:text-gray-200">
+                    <li
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                      class="list-disc ml-6 md:ml-10 leading-8 md:leading-10 text-xs sm:text-sm md:text-base"
+                    >
+                      Angkor Heartbeat theatrical show
+                    </li>
+                    <li
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                      class="list-disc ml-6 md:ml-10 leading-8 md:leading-10 text-xs sm:text-sm md:text-base"
+                    >
+                      My Village cultural exhibition
+                    </li>
+                    <li
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                      class="list-disc ml-6 md:ml-10 leading-8 md:leading-10 text-xs sm:text-sm md:text-base"
+                    >
+                      Khmer chess tournaments (Ok Chaktrang)
+                    </li>
+                    <li
+                      data-aos="fade-up"
+                      data-aos-delay="400"
+                      class="list-disc ml-6 md:ml-10 leading-8 md:leading-10 text-xs sm:text-sm md:text-base"
+                    >
+                      Angkor Sankranta parades
+                    </li>
+                    <li
+                      data-aos="fade-up"
+                      data-aos-delay="500"
+                      class="list-disc ml-6 md:ml-10 leading-8 md:leading-10 text-xs sm:text-sm md:text-base"
+                    >
+                      Traditional & folk dances
+                    </li>
+                    <li
+                      data-aos="fade-up"
+                      data-aos-delay="600"
+                      class="list-disc ml-6 md:ml-10 leading-8 md:leading-10 text-xs sm:text-sm md:text-base"
+                    >
+                      Martial arts demos (Bokator, Kun Khmer-type mixed martial
+                      arts)
+                    </li>
+                    <li
+                      data-aos="fade-up"
+                      data-aos-delay="700"
+                      class="list-disc ml-6 md:ml-10 leading-8 md:leading-10 text-xs sm:text-sm md:text-base"
+                    >
+                      Angkor Smile Garden & Moni Harotey Garden
+                    </li>
+                    <li
+                      data-aos="fade-up"
+                      data-aos-delay="800"
+                      class="list-disc ml-6 md:ml-10 leading-8 md:leading-10 text-xs sm:text-sm md:text-base"
+                    >
+                      Let's Play Water (Tos Tos Leng Teuk) symbolic water
+                      blessings
+                    </li>
+                    <li
+                      data-aos="fade-up"
+                      data-aos-delay="900"
+                      class="list-disc ml-6 md:ml-10 leading-8 md:leading-10 text-xs sm:text-sm md:text-base"
+                    >
+                      Riverside market & concerts
+                    </li>
+                    <li
+                      data-aos="fade-up"
+                      data-aos-delay="1000"
+                      class="list-disc ml-6 md:ml-10 leading-8 md:leading-10 text-xs sm:text-sm md:text-base"
+                    >
+                      Ox cart/buffalo races
+                    </li>
+                    <li
+                      data-aos="fade-up"
+                      data-aos-delay="1100"
+                      class="list-disc ml-6 md:ml-10 leading-8 md:leading-10 text-xs sm:text-sm md:text-base"
+                    >
+                      Buddha Bathing (Srang Preah) religious ritual
+                    </li>
+                    <li
+                      data-aos="fade-up"
+                      data-aos-delay="1200"
+                      class="list-disc ml-6 md:ml-10 leading-8 md:leading-10 text-xs sm:text-sm md:text-base"
+                    >
+                      Floating Lantern Ceremonies nightly
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+
+            <div class="w-full lg:w-100 px-0 md:px-5 mt-10 lg:mt-0">
+              <div
+                class="border-1 border-gray-300 p-4 md:p-5 rounded-2xl shadow-2xl"
+              >
+                <h2
+                  class="text-lg md:text-2xl font-bold text-primary mt-2 md:mt-5 mb-4 md:mb-8 text-center dark:text-secondary"
+                >
+                  Event Infomation
+                </h2>
+                <div
+                  class="flex flex-col gap-3 md:gap-0 md:flex-row md:justify-between pb-2 md:pb-3 mb-4 md:mb-7 border-b-1 border-gray-200"
+                >
+                  <p class="dark:text-gray-200 text-xs md:text-base">
+                    Ticket Price
+                  </p>
+                  <p
+                    id="eventPrice"
+                    class="dark:text-gray-200 text-xs md:text-base"
+                  >
+                    $45
+                  </p>
+                </div>
+                <div
+                  class="flex flex-col gap-3 md:gap-0 md:flex-row md:justify-between pb-2 md:pb-3 mb-4 md:mb-7 border-b-1 border-gray-200"
+                >
+                  <p class="dark:text-gray-200 text-xs md:text-base">
+                    Total Ticket
+                  </p>
+                  <p
+                    id="eventTicket"
+                    class="dark:text-gray-200 text-xs md:text-base"
+                  >
+                    300
+                  </p>
+                </div>
+                <div
+                  class="flex flex-col gap-3 md:gap-0 md:flex-row md:justify-between pb-2 md:pb-3 mb-4 md:mb-7 border-b-1 border-gray-200"
+                >
+                  <p class="dark:text-gray-200 text-xs md:text-base">
+                    Start Date
+                  </p>
+                  <p
+                    id="eventStartDate"
+                    class="dark:text-gray-200 text-xs md:text-base"
+                  >
+                    14 April 2025
+                  </p>
+                </div>
+                <div
+                  class="flex flex-col gap-3 md:gap-0 md:flex-row md:justify-between pb-2 md:pb-3 mb-4 md:mb-7 border-b-1 border-gray-200"
+                >
+                  <p class="dark:text-gray-200 text-xs md:text-base">
+                    Location
+                  </p>
+                  <p
+                    id="eventLocationSidebar"
+                    class="dark:text-gray-200 text-xs md:text-base"
+                  >
+                    Siem Reap - Cambodia
+                  </p>
+                </div>
+                <a href="">
+                  <button
+                    class="text-base md:text-lg font-semibold text-white bg-secondary rounded-xl p-3 md:p-[0.8rem_1rem] cursor-pointer mb-4 md:mb-5 hover:scale-110 hover:bg-amber-600/90 transition duration-500 w-full"
+                  >
+                    Book Your Seat
+                  </button>
+                </a>
+              </div>
+              <div>
+                <h2
+                  class="text-lg md:text-2xl font-bold text-primary mt-8 md:mt-10 mb-6 md:mb-10 text-center"
+                >
+                  Photo Galary
+                </h2>
+                <div
+                  id="eventGalary"
+                  class="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6"
+                >
+                  <img
+                    class="w-full rounded-xl"
+                    src="../../assets/img/galary-1.png"
+                    alt=""
+                  />
+                  <img
+                    class="w-full rounded-xl"
+                    src="../../assets/img/galary-2.png"
+                    alt=""
+                  />
+                  <img
+                    class="w-full rounded-xl"
+                    src="../../assets/img/galary-3.png"
+                    alt=""
+                  />
+                  <img
+                    class="w-full rounded-xl"
+                    src="../../assets/img/galary-4.png"
+                    alt=""
+                  />
+                  <img
+                    class="w-full rounded-xl"
+                    src="../../assets/img/galary-5.png"
+                    alt=""
+                  />
+                  <img
+                    class="w-full rounded-xl"
+                    src="../../assets/img/galary-6.png"
+                    alt=""
+                  />
+                </div>
+                <img
+                  id="eventPhoto"
+                  class="my-8 md:my-10 w-full rounded-xl"
+                  src="../../assets/img/map-1.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-primary text-white mt-10 md:mt-20 dark:bg-black">
+      <section class="border-gray-400 border-b">
+        <div
+          class="container max-w-screen-xl mx-auto py-8 md:py-10 px-2 sm:px-6 lg:px-8"
+        >
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 sm:gap-x-8 lg:gap-x-12 items-start"
+          >
+            <div class="flex justify-center sm:justify-start items-center">
+              <a href="index.html">
+                <img
+                  width="140"
+                  md:width="180"
+                  src="/assets/img/logo.png"
+                  alt="MaTrip Logo"
+                />
+              </a>
+            </div>
+
+            <div class="text-center sm:text-left mt-6 sm:mt-0">
+              <h2
+                class="mb-2 md:mb-4 text-lg md:text-xl font-bold text-secondary"
+              >
+                Support
+              </h2>
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="./index.html#start"
+                >Customer Support</a
+              >
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="./index.html#start"
+                >Privacy & Policy</a
+              >
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="./index.html#start"
+                >Contact Channels</a
+              >
+            </div>
+
+            <div class="text-center sm:text-left mt-6 sm:mt-0">
+              <h2
+                class="mb-2 md:mb-4 text-lg md:text-xl font-bold text-secondary"
+              >
+                About Us
+              </h2>
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="./index.html#start"
+                >Our Story</a
+              >
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="./index.html#start"
+                >Travel Blog & Tips</a
+              >
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="./index.html#start"
+                >Working with Us</a
+              >
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="./index.html#start"
+                >Be Our Partner</a
+              >
+            </div>
+
+            <div class="text-center sm:text-left mt-6 sm:mt-0">
+              <h2
+                class="mb-2 md:mb-4 text-lg md:text-xl font-bold text-secondary"
+              >
+                Contact Info
+              </h2>
+              <p class="mb-2 md:mb-4 font-light text-xs md:text-base">
+                135 Kampuchea Krom, Teuk Thla, Toul Kork, Phnom Penh, Cambodia
+              </p>
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="mailto:MaTrip12@gmail.com"
+                ><i class="mr-2 md:mr-3 fa-solid fa-envelope text-secondary"></i
+                >MaTrip12@gmail.com</a
+              >
+              <a
+                class="block mt-2 font-light hover:font-bold hover:underline transition duration-300 text-xs md:text-base"
+                href="tel:+85512345678"
+                ><i
+                  class="mr-2 md:mr-3 fa-solid fa-phone-volume text-secondary"
+                ></i
+                >+855 12345678</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="container flex flex-col md:flex-row items-center justify-between max-w-screen-xl mx-auto py-4 md:py-5 px-2 sm:px-6 lg:px-8 text-center md:text-left"
+      >
+        <p class="text-xs md:text-sm font-light mb-2 md:mb-0">
+          © Copyright 2025 by Matrip.com
+        </p>
+        <div class="flex flex-wrap justify-center gap-2 md:gap-3">
+          <img
+            class="h-5 sm:h-6 md:h-8"
+            src="/assets/img/visa.png"
+            alt="Visa"
+          />
+          <img class="h-5 sm:h-6 md:h-8" src="/assets/img/aba.png" alt="ABA" />
+          <img
+            class="h-5 sm:h-6 md:h-8"
+            src="/assets/img/acleda.png"
+            alt="ACLEDA"
+          />
+          <img
+            class="h-5 sm:h-6 md:h-8"
+            src="/assets/img/paypal.png"
+            alt="PayPal"
+          />
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/preline@latest/dist/preline.js"></script>
+  </body>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false,
+      easing: "ease-in-out",
+    });
+  </script>
+  <script src="../script/scroll-progress.js"></script>
+  <script src="../script/toggle.js"></script>
+  <script src="../script/event-detail.js"></script>
+  <script src="../script/toggle.js"></script>
+  <script src="../script/auth-check.js"></script>
+  <script src="../script/auth-check.js"></script>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style/input.css" />
+  <link rel="stylesheet" href="../style/output.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Profile</title>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col lg:flex-row">
+
+  <!-- Sidebar -->
+  <aside class="w-full lg:w-64 bg-white shadow-lg p-6 flex flex-col justify-between order-last lg:order-first">
+    <div class="space-y-6">
+      <h2 class="text-2xl font-extrabold text-primary">
+        <a href="../../index.html" >
+          <img class="w-30 " src="../../assets/img/logo.png" alt="">
+        </a>
+      </h2>
+      <nav class="space-y-3">
+        <a href="#" class="block text-gray-700 hover:text-primary transition font-medium">Saved History</a>
+        <a href="#" class="block text-gray-700 hover:text-primary transition font-medium">Booking</a>
+      </nav>
+    </div>
+    <div class="space-y-4 pt-8 border-t mt-8">
+      <a href="#" class="block text-gray-700 hover:text-primary transition font-medium" onclick="toggleEdit()">Setting</a>
+      <button onclick="logout()" class="text-red-600 hover:underline font-semibold cursor-pointer">Logout</button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-4 sm:p-6 md:p-8 lg:p-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Profile Card -->
+      <div class="lg:row-span-2 bg-white p-8 rounded-2xl shadow-md space-y-6">
+        <h3 class="text-2xl font-bold text-gray-800">Profile Info</h3>
+        <div class="flex flex-col sm:flex-row gap-6">
+          <div class="relative w-fit mx-auto sm:mx-0 flex flex-col items-center">
+            <img id="profile-img" src="../../assets/img/cholna-2.png" alt="Profile"
+              class="w-28 h-28 rounded-full object-cover border-4 border-primary shadow-md mb-10" />
+            <input type="file" id="imgInput" accept="image/*"
+              class="w-50 text-sm mt-1 opacity-0 pointer-events-none" onchange="previewImage(event)">
+          </div>
+          <div class="flex-1 space-y-4">
+            <div>
+              <label class="block font-semibold mb-1">Name</label>
+              <input type="text" id="name" class="w-full border border-gray-300 rounded-md px-3 py-2" value="Tith Cholna" disabled>
+            </div>
+            <div>
+              <label class="block font-semibold mb-1">Gender</label>
+              <input type="text" id="gender" class="w-full border border-gray-300 rounded-md px-3 py-2" value="Female" disabled>
+            </div>
+            <div>
+              <label class="block font-semibold mb-1">Email</label>
+              <input type="email" value="cholna168@example.com" class="w-full border border-gray-300 rounded-md px-3 py-2" disabled>
+            </div>
+            <div>
+              <label class="block font-semibold mb-1">Phone</label>
+              <input type="text" value="+855 12 456 789" class="w-full border border-gray-300 rounded-md px-3 py-2" disabled>
+            </div>
+            <div>
+              <label class="block font-semibold mb-1">Address</label>
+              <textarea id="address" class="w-full border border-gray-300 rounded-md px-3 py-2" rows="2" disabled>Phnom Penh, Cambodia</textarea>
+            </div>
+            <div id="edit-buttons" class="flex justify-end gap-4 mt-4 hidden">
+              <button onclick="cancelEdit()" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100">Cancel</button>
+              <button onclick="saveEdit()" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-[#0653ad]">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Next Trip -->
+      <div class="bg-white p-8 rounded-2xl shadow-md">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Next Trip</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li><strong>Destination:</strong> Siem Reap</li>
+          <li><strong>Date:</strong> 15 July 2025</li>
+          <li><strong>Status:</strong> Confirmed</li>
+        </ul>
+      </div>
+
+      <!-- Past Trips -->
+      <div class="bg-white p-8 rounded-2xl shadow-md">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Past Trips</h3>
+        <ul class="list-disc ml-6 space-y-2 text-gray-700">
+          <li>Angkor Wat - March 2025</li>
+          <li>Kampot - January 2025</li>
+          <li>Koh Rong - October 2024</li>
+        </ul>
+      </div>
+    </div>
+
+    
+  </main>
+
+<div id="logoutModal" class="fixed inset-0 bg-[rgba(0,0,0,0.3)] bg-opacity-40 flex items-center justify-center z-50 hidden">
+  <div class="bg-white p-6 rounded-lg w-80 shadow-xl text-center">
+    <h2 class="text-lg font-semibold mb-4">Are you sure you want to logout?</h2>
+    <div class="flex justify-between gap-4 mt-4">
+      <button onclick="closeLogoutModal()" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 w-full cursor-pointer">Cancel</button>
+      <button onclick="confirmLogout()" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 w-full cursor-pointer">Logout</button>
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://unpkg.com/preline@latest/dist/preline.js"></script>
+  <script src="../script/scroll-progress.js"></script>
+  <script>
+    function toggleEdit() {
+      document.getElementById('name').disabled = false;
+      document.getElementById('gender').disabled = false;
+      document.getElementById('address').disabled = false;
+      document.getElementById('edit-buttons').classList.remove('hidden');
+      document.getElementById('imgInput').classList.remove('opacity-0', 'pointer-events-none');
+    }
+
+    function cancelEdit() {
+      document.getElementById('name').disabled = true;
+      document.getElementById('gender').disabled = true;
+      document.getElementById('address').disabled = true;
+      document.getElementById('edit-buttons').classList.add('hidden');
+      document.getElementById('imgInput').classList.add('opacity-0', 'pointer-events-none');
+    }
+
+    function saveEdit() {
+      alert('Changes saved successfully!');
+      cancelEdit();
+    }
+
+    function previewImage(event) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        const output = document.getElementById('profile-img');
+        output.src = reader.result;
+      }
+      reader.readAsDataURL(event.target.files[0]);
+    }
+
+    function logout() {
+    // Show modal
+    document.getElementById("logoutModal").classList.remove("hidden");
+  }
+
+  function closeLogoutModal() {
+    // Hide modal
+    document.getElementById("logoutModal").classList.add("hidden");
+  }
+
+  function confirmLogout() {
+    // Remove login status
+    localStorage.removeItem('loggedIn');
+
+    // Redirect to homepage
+    window.location.href = "../../index.html";
+  }
+  </script>
+
+      
+
+</body>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init({
+      duration: 1000,
+      once: false,
+      easing: "ease-in-out",
+    });
+    </script>
+
+</html>

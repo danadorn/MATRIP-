@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Test</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gray-100">
+
+        <div class="min-h-screen flex items-center justify-center">
+          <div class="flex flex-col md:flex-row w-full max-w-7xl mx-3 bg-white shadow-lg rounded-2xl overflow-hidden">
+        <!-- Left side -->
+        <div class="hidden md:flex md:w-1/2 bg-primary p-10 flex-col justify-center text-white relative">
+          <div class="space-y-6">
+            <img src="../../assets/img/login-4.png" alt="">
+          </div>
+        </div>
+
+        <!-- Right side -->
+        <div class="w-full md:w-1/2 p-10"> 
+        <div class="text-center">
+            <img
+            class="w-40 mx-auto"
+            src="../../assets/img/logo.png" class=" mx-auto transition duration-500 cursor-pointer hover:scale-110 hover:duration-500" width="100" alt="Logo"/>
+          <h2 class="text-2xl font-bold">Sign in / Register</h2>
+          <p class="text-gray-500 mt-2">Manage your bookings with ease</p>
+           <form id="loginForm" class="bg-white p-8 rounded-xl shadow-lg space-y-4">
+    <input id="email" type="email" placeholder="Email"
+      class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required />
+    <input id="password" type="password" placeholder="Password"
+      class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required />
+                <div class="flex justify-end mt-1">
+            <a href="#" class="text-sm text-blue-500 hover:underline">Forgot password?</a>
+          </div>
+        
+
+          <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">Login</button>
+          <button type="button" class="w-full flex items-center justify-center border py-3 rounded-lg mt-2">
+            <img src="../../assets/img/Google.png" class="mr-2 w-8 h-8"/> Sign in with Google
+          </button>
+        
+        <div class="text-center mt-4 text-sm">
+          Don't have an account yet? <a href="#" class="text-blue-600 font-semibold">Sign Up</a>
+        </div>
+    
+            </form>
+  
+        </div>
+  <!-- Login Box -->
+ 
+
+ <div id="loading" class="fixed inset-0 bg-[rgba(0,0,0,0.3)] flex items-center justify-center hidden z-50">
+  <div class="bg-white p-6 rounded-xl shadow-xl text-center animate-pulse-in w-72">
+    <div class="flex justify-center mb-4">
+      <svg class="animate-spin h-8 w-8 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 000 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z"/>
+      </svg>
+    </div>
+    <h3 class="text-lg font-semibold text-gray-700">Logging in...</h3>
+    <p class="text-sm text-gray-500 mt-1">Please wait a moment.</p>
+  </div>
+</div>
+
+<!-- Success Modal -->
+<div id="successModal" class="fixed inset-0 bg-[rgba(0,0,0,0.3)] bg-opacity-40 flex items-center justify-center hidden z-50">
+  <div class="bg-white p-6 rounded-xl shadow-xl text-center animate-bounce-in">
+    <h3 class="text-xl font-bold text-green-600">Login Successful!</h3>
+    <p class="mt-2 text-sm text-gray-600">Welcome back! Traveler</p>
+    
+  </div>
+</div>
+  <!-- Script -->
+  <script>
+  document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    // Simple email validation
+    if (!email.includes("@") || !email.endsWith(".com")) {
+      alert("Invalid email");
+      return;
+    }
+
+    // Password length check
+    if (password.length < 6) {
+      alert("Password too short");
+      return;
+    }
+
+    const loading = document.getElementById("loading");
+    const successModal = document.getElementById("successModal");
+
+    // Show loading spinner
+    loading.classList.remove("hidden");
+
+    setTimeout(() => {
+      // Hide loading spinner
+      loading.classList.add("hidden");
+
+      // Show success modal
+      successModal.classList.remove("hidden");
+
+      // Save login status in localStorage
+      localStorage.setItem('loggedIn', 'true');
+
+      // Read 'from' parameter to redirect back after login
+      const urlParams = new URLSearchParams(window.location.search);
+      const fromPage = urlParams.get('from') || '../../index.html';
+
+      setTimeout(() => {
+        // Hide success modal
+        successModal.classList.add("hidden");
+
+        // Redirect to the 'from' page or homepage
+        window.location.href = fromPage;
+      }, 1500);
+    }, 2000);
+  });
+</script>
+
+
+</body>
+</html>
