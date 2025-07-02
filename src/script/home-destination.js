@@ -50,7 +50,7 @@ const destination = [
 
 let cardDestination = destination.map((data, idx) => {
   return `
-    <div class="border-1 border-gray-300 w-70 h-95 rounded-2xl shadow-xl shadow-gray-300 cursor-pointer"
+    <div class="border-1 border-gray-300 w-70 h-95 rounded-2xl cursor-pointer"
          data-aos="fade-up"
          data-aos-anchor-placement="top-center"
 x         data-aos-delay="${30 + idx * 30}">
